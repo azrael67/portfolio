@@ -119,19 +119,21 @@
         .tech-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         /* --- CONTACT & SOCIALS --- */
-        .social-container { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
-        .social-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: transform 0.3s; width: 150px; }
+        .social-container { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
+        .social-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: transform 0.3s; width: 130px; }
         .social-item:hover { transform: translateY(-10px); }
         .social-icon-box { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); margin-bottom: 1rem; transition: all 0.3s; }
         
         .social-item:hover .social-icon-box.insta { border-color: #E1306C; box-shadow: 0 0 20px rgba(225, 48, 108, 0.4); background: rgba(225, 48, 108, 0.1); }
         .social-item:hover .social-icon-box.linkedin { border-color: #0077B5; box-shadow: 0 0 20px rgba(0, 119, 181, 0.4); background: rgba(0, 119, 181, 0.1); }
         .social-item:hover .social-icon-box.gmail { border-color: #EA4335; box-shadow: 0 0 20px rgba(234, 67, 53, 0.4); background: rgba(234, 67, 53, 0.1); }
+        .social-item:hover .social-icon-box.resume { border-color: var(--accent); box-shadow: 0 0 20px var(--accent-glow); background: rgba(0, 255, 136, 0.1); }
 
         .social-icon-svg { width: 40px; height: 40px; fill: #fff; transition: fill 0.3s; }
         .social-item:hover .social-icon-box.insta .social-icon-svg { fill: #E1306C; }
         .social-item:hover .social-icon-box.linkedin .social-icon-svg { fill: #0077B5; }
         .social-item:hover .social-icon-box.gmail .social-icon-svg { fill: #EA4335; }
+        .social-item:hover .social-icon-box.resume .social-icon-svg { fill: var(--accent); }
 
         .social-text { color: #888; font-size: 0.9rem; transition: color 0.3s; text-align: center; }
         .social-item:hover .social-text { color: #fff; }
@@ -148,11 +150,9 @@
         .modal-desc { font-size: 1.1rem; color: #ccc; line-height: 1.8; white-space: pre-wrap; }
         .modal-desc b { color: var(--accent); }
 
-        /* ArtStation Button in Modal */
         .artstation-btn { display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: #13aff0; color: #fff; text-decoration: none; font-weight: bold; border-radius: 4px; transition: background 0.3s; }
         .artstation-btn:hover { background: #0099e5; }
 
-        /* Animations */
         @keyframes fadeIn { from {opacity:0} to {opacity:1} }
         @keyframes popIn { from {opacity:0; transform:scale(0.9)} to {opacity:1; transform:scale(1)} }
         @keyframes loadProgress { from {width:0} to {width:100%} }
@@ -164,7 +164,7 @@
             .hero h1 { font-size: 3rem; }
             .nav-links { display: none; }
             .modal-title { font-size: 2rem; }
-            .social-container { gap: 2rem; }
+            .social-container { gap: 1rem; }
         }
     </style>
 </head>
@@ -271,10 +271,7 @@
             <div id="3d-art" class="project-grid">
                 <div class="project-card" onclick="openGameModal('fountain')">
                     <div class="card-icon">⛲</div>
-                    <div class="card-info">
-                        <h3>Ancient Courtyard Fountain</h3>
-                        <p>Environment Art | 3D Modeling</p>
-                    </div>
+                    <div class="card-info"><h3>Ancient Courtyard Fountain</h3><p>Environment Art | 3D Modeling</p></div>
                 </div>
             </div>
 
@@ -289,14 +286,23 @@
         <section id="contact" class="section" style="text-align:center;">
             <h2 class="section-title">Let's Build Worlds</h2>
             <div class="social-container">
+                <a href="Arjun_MB_Resume.pdf" target="_blank" rel="noopener noreferrer" class="social-item">
+                    <div class="social-icon-box resume">
+                        <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                    </div>
+                    <span class="social-text">Resume</span>
+                </a>
+
                 <a href="https://www.linkedin.com/in/arjun-m-b-315a292a1" target="_blank" rel="noopener noreferrer" class="social-item">
                     <div class="social-icon-box linkedin"><svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></div>
                     <span class="social-text">LinkedIn</span>
                 </a>
+
                 <a href="https://www.instagram.com/___.arjnnnn?igsh=czMwcWZqMDZwajBj&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-item">
                     <div class="social-icon-box insta"><svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
                     <span class="social-text">Instagram</span>
                 </a>
+
                 <a href="mailto:arjunmab7@gmail.com" class="social-item">
                     <div class="social-icon-box gmail"><svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
                     <span class="social-text">Email</span>
@@ -349,7 +355,7 @@
                 videoId: '',
                 artstation: 'https://www.artstation.com/artwork/x3GkgR',
                 roles: ['3D Modeling', 'Environment Art', 'Texturing'],
-                desc: `This project showcases an ancient courtyard fountain environment created as part of my 3D environment art practice. The model was fully created in <b>Autodesk Maya</b>, focusing on clean topology, balanced proportions, and modular structure design. The scene represents a classical architectural space featuring a central multi-tier fountain surrounded by symmetrical pillar formations, inspired by ancient and historical stone courtyards.\n\nThe texturing and material work were completed in <b>Substance 3D Painter</b>, where I focused on achieving realistic surface details such as aged stone, water wear, moss buildup, and natural weathering to enhance environmental storytelling. Special attention was given to roughness variation, height detailing, and material blending to bring authenticity to the asset.\n\nLighting and rendering were designed to emphasize the structural depth, surface imperfections, and reflective water properties, helping to create a calm and atmospheric environment.\n\n<b>Software Used:</b>\n• Autodesk Maya – Modeling & Scene Setup\n• Substance 3D Painter – Texturing & Material Creation\n\nThis project helped me strengthen my workflow in environment asset creation, material detailing, and presentation rendering.`
+                desc: `This project showcases an ancient courtyard fountain environment created as part of my 3D environment art practice. Fully created in <b>Autodesk Maya</b> and textured in <b>Substance 3D Painter</b>.`
             }
         };
 
@@ -373,7 +379,6 @@
             const modal = document.getElementById('project-modal');
             const videoContainer = document.getElementById('modal-video-container');
             const artstationContainer = document.getElementById('artstation-link-container');
-            
             document.getElementById('modal-title').innerText = data.title;
             document.getElementById('modal-desc').innerHTML = data.desc;
             
@@ -384,7 +389,6 @@
                 videoContainer.style.display = 'none';
             }
 
-            // Handle ArtStation Link
             artstationContainer.innerHTML = '';
             if(data.artstation) {
                 const link = document.createElement('a');
