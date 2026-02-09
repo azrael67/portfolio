@@ -122,10 +122,8 @@
         .social-container { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
         .social-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: transform 0.3s; width: 150px; }
         .social-item:hover { transform: translateY(-10px); }
-
         .social-icon-box { width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); margin-bottom: 1rem; transition: all 0.3s; }
         
-        /* Brand Colors */
         .social-item:hover .social-icon-box.insta { border-color: #E1306C; box-shadow: 0 0 20px rgba(225, 48, 108, 0.4); background: rgba(225, 48, 108, 0.1); }
         .social-item:hover .social-icon-box.linkedin { border-color: #0077B5; box-shadow: 0 0 20px rgba(0, 119, 181, 0.4); background: rgba(0, 119, 181, 0.1); }
         .social-item:hover .social-icon-box.gmail { border-color: #EA4335; box-shadow: 0 0 20px rgba(234, 67, 53, 0.4); background: rgba(234, 67, 53, 0.1); }
@@ -149,6 +147,10 @@
         .role-badge { padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; font-size: 0.85rem; color: #fff; }
         .modal-desc { font-size: 1.1rem; color: #ccc; line-height: 1.8; white-space: pre-wrap; }
         .modal-desc b { color: var(--accent); }
+
+        /* ArtStation Button in Modal */
+        .artstation-btn { display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: #13aff0; color: #fff; text-decoration: none; font-weight: bold; border-radius: 4px; transition: background 0.3s; }
+        .artstation-btn:hover { background: #0099e5; }
 
         /* Animations */
         @keyframes fadeIn { from {opacity:0} to {opacity:1} }
@@ -266,7 +268,16 @@
                 </div>
             </div>
 
-            <div id="3d-art" class="project-grid"><p style="color:#666; text-align:center; width:100%;">Content coming soon...</p></div>
+            <div id="3d-art" class="project-grid">
+                <div class="project-card" onclick="openGameModal('fountain')">
+                    <div class="card-icon">⛲</div>
+                    <div class="card-info">
+                        <h3>Ancient Courtyard Fountain</h3>
+                        <p>Environment Art | 3D Modeling</p>
+                    </div>
+                </div>
+            </div>
+
             <div id="board-game" class="project-grid">
                 <div class="project-card" onclick="openGameModal('tictac')">
                     <div class="card-icon">🎲</div>
@@ -279,23 +290,15 @@
             <h2 class="section-title">Let's Build Worlds</h2>
             <div class="social-container">
                 <a href="https://www.linkedin.com/in/arjun-m-b-315a292a1" target="_blank" rel="noopener noreferrer" class="social-item">
-                    <div class="social-icon-box linkedin">
-                        <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </div>
+                    <div class="social-icon-box linkedin"><svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></div>
                     <span class="social-text">LinkedIn</span>
                 </a>
-
                 <a href="https://www.instagram.com/___.arjnnnn?igsh=czMwcWZqMDZwajBj&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-item">
-                    <div class="social-icon-box insta">
-                        <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    </div>
+                    <div class="social-icon-box insta"><svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
                     <span class="social-text">Instagram</span>
                 </a>
-
                 <a href="mailto:arjunmab7@gmail.com" class="social-item">
-                    <div class="social-icon-box gmail">
-                        <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    </div>
+                    <div class="social-icon-box gmail"><svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
                     <span class="social-text">Email</span>
                 </a>
             </div>
@@ -310,6 +313,7 @@
             <div id="modal-video-container" class="video-container"><iframe id="modal-video" src="" frameborder="0" allowfullscreen></iframe></div>
             <div class="role-badges" id="modal-roles"></div>
             <div id="modal-desc" class="modal-desc"></div>
+            <div id="artstation-link-container"></div>
         </div>
     </div>
 
@@ -338,7 +342,14 @@
             },
             'tictac': {
                 title: 'TIC-TAC-TWIST', videoId: '', roles: ['Board Game Design', 'Accessibility', 'Interaction Design'],
-                desc: `<b>🔹 Game Concept Overview</b>\nTactile Tic-Tac-Twist is an accessible board game designed for blind and visually impaired players. It reimagines the classic Tic-Tac-Toe with three stacked 3x3 boards, allowing for 3D strategic thinking entirely through touch.`
+                desc: `<b>🔹 Game Concept Overview</b>\nTactile Tic-Tac-Twist is an accessible board game designed for blind and visually impaired players.`
+            },
+            'fountain': {
+                title: 'Ancient Courtyard Fountain',
+                videoId: '',
+                artstation: 'https://www.artstation.com/artwork/x3GkgR',
+                roles: ['3D Modeling', 'Environment Art', 'Texturing'],
+                desc: `This project showcases an ancient courtyard fountain environment created as part of my 3D environment art practice. The model was fully created in <b>Autodesk Maya</b>, focusing on clean topology, balanced proportions, and modular structure design. The scene represents a classical architectural space featuring a central multi-tier fountain surrounded by symmetrical pillar formations, inspired by ancient and historical stone courtyards.\n\nThe texturing and material work were completed in <b>Substance 3D Painter</b>, where I focused on achieving realistic surface details such as aged stone, water wear, moss buildup, and natural weathering to enhance environmental storytelling. Special attention was given to roughness variation, height detailing, and material blending to bring authenticity to the asset.\n\nLighting and rendering were designed to emphasize the structural depth, surface imperfections, and reflective water properties, helping to create a calm and atmospheric environment.\n\n<b>Software Used:</b>\n• Autodesk Maya – Modeling & Scene Setup\n• Substance 3D Painter – Texturing & Material Creation\n\nThis project helped me strengthen my workflow in environment asset creation, material detailing, and presentation rendering.`
             }
         };
 
@@ -361,6 +372,8 @@
             const data = gamesData[id];
             const modal = document.getElementById('project-modal');
             const videoContainer = document.getElementById('modal-video-container');
+            const artstationContainer = document.getElementById('artstation-link-container');
+            
             document.getElementById('modal-title').innerText = data.title;
             document.getElementById('modal-desc').innerHTML = data.desc;
             
@@ -369,6 +382,17 @@
                 document.getElementById('modal-video').src = `https://www.youtube.com/embed/${data.videoId}`;
             } else {
                 videoContainer.style.display = 'none';
+            }
+
+            // Handle ArtStation Link
+            artstationContainer.innerHTML = '';
+            if(data.artstation) {
+                const link = document.createElement('a');
+                link.href = data.artstation;
+                link.target = '_blank';
+                link.className = 'artstation-btn';
+                link.innerText = 'View High-Res on ArtStation';
+                artstationContainer.appendChild(link);
             }
 
             const rolesDiv = document.getElementById('modal-roles');
